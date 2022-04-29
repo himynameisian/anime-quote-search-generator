@@ -1,19 +1,40 @@
 /******************************************
-/* CSS
+/* CSS //march 18th
 /*******************************************/
 
 /* Box Model Hack */
 *{
   box-sizing: border-box;
 }
+html{
+  border: 2px ridge rgb(133, 42, 98);
+  font-size: 2.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background: linear-gradient(rgb(177, 177, 177), green) no-repeat;
+}
 
 /******************************************
 /* LAYOUT
 /*******************************************/
+.wrapper{
+  text-align: center;
+  padding: 24vh;
+  margin: auto;
+}
+.random{
+  padding: 25px;
+  margin: 25px;
+}
+.hidden{
+	display: none;
+}
+
 img{
   display: block;
   margin: 0 auto;
 }
+
+
 
 
 /******************************************
