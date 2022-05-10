@@ -13,7 +13,7 @@ const words = document.querySelector('#wrap')
 
 document.querySelector('button').addEventListener('click',getQuote)
 
-document.querySelector('button, .button2').addEventListener('click',showInfo)
+document.querySelector('button').addEventListener('click',showInfo)
 
 function showInfo(){
   words.classList.remove('hidden')
@@ -39,17 +39,22 @@ function getQuote(){
 }
 
 document.querySelector('.button2').addEventListener('click',getRandom)
+document.querySelector('.button2').addEventListener('click',showInfos)
+
+function showInfos(){
+  words.classList.remove('hidden')
+}
 
 function getRandom(){
   const ANIMERANDOM_url = 'https://animechan.vercel.app/api/random'
   fetch(ANIMERANDOM_url)
         .then(res => res.json())
-        .then(data=> {
-          console.log(data)
+        .then(quote=> {
+          console.log(quote)
 
-            document.querySelector('h2').innerText = data.anime
-            document.querySelector('h3').innerText = data.character
-            document.querySelector('h4').innerText = data.quote
+            document.querySelector('h2').innerText = quote.anime
+            document.querySelector('h3').innerText = quote.character
+            document.querySelector('h4').innerText = quote.quote
         })
         .catch(err => {
           console.log(`error ${err}`)
